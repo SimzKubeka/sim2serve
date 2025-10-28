@@ -13,7 +13,6 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
     addToCart(product);
-    // Simple visual feedback
     const button = e.currentTarget as HTMLButtonElement;
     const originalText = button.textContent;
     button.textContent = "Added!";

@@ -28,12 +28,10 @@ export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mounted, setMounted] = useState(false);
 
-  // Set mounted on client only
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Auto-rotate slides every 5 seconds
   useEffect(() => {
     if (!mounted) return;
     
@@ -80,7 +78,6 @@ export default function Hero() {
                     </p>
                     <button 
                       onClick={() => {
-                        // Scroll to products section
                         const productsSection = document.querySelector('[data-products-section]');
                         if (productsSection) {
                           productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });

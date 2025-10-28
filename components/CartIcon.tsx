@@ -13,11 +13,7 @@ export default function CartIcon() {
     setMounted(true);
     const updateCount = () => setCount(getCartItemCount());
     updateCount();
-    
-    // Listen for storage changes to update count
     window.addEventListener("storage", updateCount);
-    
-    // Also update when focus returns to window (in case another tab updated cart)
     window.addEventListener("focus", updateCount);
     
     return () => {
@@ -26,7 +22,6 @@ export default function CartIcon() {
     };
   }, []);
 
-  // Poll for updates (in case same tab updates cart)
   useEffect(() => {
     if (!mounted) return;
     

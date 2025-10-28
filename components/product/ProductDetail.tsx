@@ -12,7 +12,6 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({ product, onClose, isOpen }: ProductDetailProps) {
-  // Lock scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
